@@ -1,0 +1,97 @@
+.order-status {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.status-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.status-icon.loading {
+  animation: rotate 1s infinite linear;
+  opacity: 0.5;
+}
+
+
+.ordered {
+    background-color: #ffb74d;
+  }
+
+.ordered::after{
+    content:"✅";
+}
+  
+
+.cooking {
+  background-color: #ffb74d;
+}
+
+.packed {
+  background-color: #81c784;
+}
+
+.out-for-delivery {
+  background-color: #64b5f6;
+}
+
+.delivered {
+  background-color: #66bb6a;
+}
+
+.cooking::after {
+  content: "🔥";
+}
+
+.packed::after {
+  content: "📦";
+}
+
+.out-for-delivery::after {
+  content: "🚚";
+}
+
+.delivered::after {
+  content: "🎉";
+}

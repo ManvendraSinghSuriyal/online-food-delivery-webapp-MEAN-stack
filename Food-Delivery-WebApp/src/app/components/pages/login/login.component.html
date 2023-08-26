@@ -1,0 +1,71 @@
+
+<div class="container-fluid bg-primary bg ">
+
+
+    <div class="row py-3">
+
+        <div class="col-md-6 offset-3 py-3">
+          <div class="card bg-dark text-white">
+            <div class="card-title text-center py-2 bg-success"><h3>Login Form</h3></div>
+            <div class="card-body p-5">
+                <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+                    <div class="mb-2">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       formControlName="email"
+                       [ngClass]="{'invalid': loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched||isSubmitted)}"      >
+                   
+                       <span *ngIf="loginForm.get('email')?.hasError('required') &&(loginForm.get('email')?.dirty || loginForm.get('email')?.touched||isSubmitted)" class="error">
+                        cannot be empty
+                      </span>
+                      
+                    </div>
+                    <div class="mb-2">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+                      [ngClass]="{'invalid': loginForm.get('name')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched||isSubmitted)}">
+                      <span *ngIf="loginForm.get('password')?.hasError('required') &&(loginForm.get('password')?.dirty || loginForm.get('password')?.touched||isSubmitted)" class="error"></span>
+                    
+                    </div>
+                    <div class="text-center py-2">
+                    <button type="submit" class="btn  btn-success">Login</button>
+                </div> 
+                </form>
+               <hr>
+                <div class="text-center">
+                  <button class="btn btn-lg btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Create new account </button>
+              </div> 
+            </div>
+
+           
+          </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade " id="exampleModal" #exampleModal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h2 class="modal-title " id="exampleModalLabel">Sign Up 
+          <i class="fa-solid fa-user-plus" style="color: #45d391;"></i>
+        </h2> 
+
+        <!-- <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        <button type="button" class="btn-close bg-light"     
+        aria-label="Close" 
+        (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body px-4">
+        <app-signup></app-signup>
+      </div>
+    
+    </div>
+  </div>
+</div>

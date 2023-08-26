@@ -1,0 +1,23 @@
+.search{
+position:absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%); /* Center align the button horizontally */
+padding: 10px 15px;
+
+border: none;
+border-radius: 5px;
+cursor: pointer;
+    z-index: 9999;
+    background-color: rgba(0, 123, 255, 0.3); /* Partially transparent blue */
+    color: #121212; 
+  
+    border: 1px solid black;
+    transition: background-color 0.3s, color 0.3s;
+    /* margin: auto; */
+    
+ }
+
+ .search:hover{
+    background-color: #007bff;
+    color: #fff; }

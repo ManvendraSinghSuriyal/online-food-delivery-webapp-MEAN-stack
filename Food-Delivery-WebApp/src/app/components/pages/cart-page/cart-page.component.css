@@ -1,0 +1,75 @@
+/* styles.css */
+
+/* Add custom styles for the cart page */
+.cart-items {
+    margin-top: 20px;
+    /* margin-left: 50px; */
+   
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* justify-content: space-evenly; */
+
+    margin-right: 10px;
+  }
+  
+  .cart-item-image {
+    max-width: 200px;
+    /* margin-right: 10px; */
+    max-height:200px ;
+  }
+  
+  .cart-item-title {
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .cart-item-price {
+    color: #888;
+  }
+  
+  .cart-item-quantity {
+    color: #888;
+  }
+  
+  /* styles.css */
+
+/* Add custom styles for the checkout component */
+.checkout-summary {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .checkout-total,
+  .checkout-item-count {
+    margin-bottom: 10px;
+  }
+  
+  .checkout-summary button {
+    width: 100%;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+  }
+
+  .cart-item-details > * {
+    margin-right: 1rem !important; /* Adjust the margin as needed */
+  }
+
+  .cart-item-details > :last-child {
+    margin-right: 0;
+  }
+
+  i:hover{
+    content: 'remove';
+  }

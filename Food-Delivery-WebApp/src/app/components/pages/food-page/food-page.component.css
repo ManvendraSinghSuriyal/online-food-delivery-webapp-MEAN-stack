@@ -1,0 +1,27 @@
+a {
+    
+    color: #0e0c0e; 
+    background-color: rgb(160, 226, 154);
+   text-decoration: none;
+   font-weight:600;
+ 
+   transition: box-shadow 0.3s ease; /* Add a smooth transition for the glow effect */
+ }
+ 
+ a:hover {
+   /* Apply the glow effect on hover */
+   box-shadow: 0 0 10px #007bff; /* You can adjust the size and color of the glow as needed */
+ }
+
+ .price{
+
+font-weight: 600;
+font-size: x-large;
+
+
+
+ }
+
+ .price::before{
+     content: 'Price: ';
+ }

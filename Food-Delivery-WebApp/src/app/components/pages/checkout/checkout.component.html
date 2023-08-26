@@ -1,0 +1,68 @@
+<app-not-found
+  [show]="!order || !order.items.length"
+  notFoundMessage="Oops You haven't order anything yet, please order some food before proceeding to checkout"
+
+></app-not-found>
+
+<div *ngIf="order && order.items.length" class="container ">
+    <div class="row py-5 ">
+    
+      <div class="col-md-6 px-4">
+               <h2 class="mb-4">Billing Information</h2>
+        <form [formGroup]="checkoutForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea id="address" class="form-control" formControlName="address" rows="3" required></textarea>
+          </div>
+        </form>
+
+        <hr class="my-4" style="border-width: 2px; border-color: #aea5a5;">
+        
+        <!-- Search Bar for Location -->
+      <!-- <div class="mb-3">
+        <label for="locationSearch" class="form-label">Search Location</label>
+        <input type="text" id="locationSearch" class="form-control" placeholder="Search for a location">
+      </div>
+       -->
+      <!-- Map Section -->
+      <div class="mb-4">
+        <h5>Choose Your Address on Map</h5>
+        <app-map [order]="order" ></app-map>
+      </div>
+      </div>
+  
+   
+    <div class="col-md-6 py-5 ">  
+        
+        <div class="card bg-dark text-white">
+    <div class="card-body">
+      <h4 class="card-title pb-3">Order Summary</h4>
+      <hr>
+      <div *ngFor="let item of order.items" class="mb-3">
+        <div class="d-flex">
+          <div class="mr-3">
+            <a [routerLink]="['/food',item.food.id]"
+            routerLinkActive="router-link-active">
+              <img [src]="item.food.imageUrl" alt="Food" class="img-fluid rounded" style="max-width: 100px;">
+            </a>
+          </div>
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between">
+              <h6 class="mb-1 ms-3 ">{{ item.food.name }}</h6>
+              <p >{{ item.food.price |currency:'INR'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h4 class="card-text font-weight-bold">Total Price: {{ order.totalPrice | currency:'INR'}}</h4>
+      
+      <div class="text-center py-2"><button class="btn btn-success" (click)="createOrder()">Go to Payment</button>
+      </div>
+    </div>
+  </div>
+</div>

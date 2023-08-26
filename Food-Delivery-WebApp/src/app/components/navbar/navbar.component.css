@@ -1,0 +1,8 @@
+.logo{
+    color: green; font-weight: bolder;
+    transition: text-shadow 0.3s ease-in-out
+}
+
+.logo:hover{
+    text-shadow: 0 0 10px rgba(47, 125, 64, 0.8);
+}

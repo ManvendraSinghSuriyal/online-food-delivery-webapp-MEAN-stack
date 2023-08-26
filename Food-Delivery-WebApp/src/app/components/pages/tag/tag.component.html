@@ -1,0 +1,12 @@
+<ng-template [ngIf]="tags">   
+<a *ngFor="let tag of tags " [routerLink]="['/tag',tag.name]"
+class="m-2 
+rounded-pill p-2  
+text-decoration-none d-inline-block"
+>
+{{tag.name}}: {{tag.count}}
+</a>    
+</ng-template>
+
+
+

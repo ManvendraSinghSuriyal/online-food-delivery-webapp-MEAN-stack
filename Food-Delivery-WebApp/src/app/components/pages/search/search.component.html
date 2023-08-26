@@ -1,0 +1,9 @@
+<div class="d-flex w-50 offset-3" >
+ <input #r class="form-control me-2 " type="text" placeholder="Search a Dish" aria-label="Search"
+ 
+ (keyup.enter)="search(r.value)" [value]="searchTerm" 
+ >
+        
+   <button class="btn btn-success" type="button" (click)="search(r.value)">Search
+
+   </button>    </div>

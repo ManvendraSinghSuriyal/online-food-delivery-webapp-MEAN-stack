@@ -1,0 +1,24 @@
+.container {
+    margin-top: 100px;
+  }
+  
+  .text-center {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .display-4 {
+    color: #dc3545;
+  }
+  
+  .lead {
+    margin-top: 10px;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(196, 196, 53);
+  }
+  
+ 
+  

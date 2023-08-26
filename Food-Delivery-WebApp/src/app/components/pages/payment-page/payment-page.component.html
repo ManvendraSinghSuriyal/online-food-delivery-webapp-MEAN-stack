@@ -1,0 +1,60 @@
+<div class="container mt-5">
+    <div class="row">
+      <!-- Left Column with Map -->
+      <div class="col-md-7">
+        <!-- Placeholder for Map Integration -->
+        <h2 class="mb-4">Your Selected Address on Map</h2>
+        <app-map [order]="order"  [unchangeable]="true"></app-map>
+      </div>
+  
+      <!-- Right Column with Order Summary -->
+      <div class="col-md-5 py-3 bg">
+        <div class="card ">
+          <div class="card-body bg-dark text-white">
+            <h3 class="card-title pb-3">Order Summary</h3>
+            
+            <!-- Display Name and Address -->
+            <h6 class="mb-2">Name: {{ order.name }}</h6>
+            <p class="mb-3">Address: {{ order.address }}</p>
+            
+            <!-- Display Order Items -->
+            <div *ngFor="let item of order.items" class="mb-" >
+              <div class="d-flex">
+                <div class="mr-3 pe-4">
+                  <a [routerLink]="['/food',item.food.id]">
+                    <img [src]="item.food.imageUrl" alt="Food" class="img-fluid rounded" style="max-width: 100px;">
+                  </a>
+                </div>
+                <div class="flex-grow-1 pt-3">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="mb-1">{{ item.food.name }}</h6>
+                    <p class="text-success mb-0">{{ item.food.price|currency:'INR'}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            
+            <!-- Display Total Price -->
+            <h4 class="card-text font-weight-bold text-success">Total Price: {{ order.totalPrice | currency:'INR'}}</h4>
+            
+
+          </div>
+          <div  class="card-footer text-center bg-success py-3">
+                        <!-- Payment Button -->
+                        <div *ngIf="order" style="  margin-top: 10px;
+                        margin-bottom: 10px;
+                        min-height: 40px;">
+                        <!-- <button class="btn btn-primary">Proceed to Payment</button> -->
+                        <google-pay-button  environment="TEST" buttonColor="black" buttonType="order"
+                [buttonSizeMode]="isCustomSize ? 'fill' : 'static'" [paymentRequest]="paymentRequest" [style.width.px]="buttonWidth"
+                [style.height.px]="buttonHeight" (loadpaymentdata)="onLoadPaymentData($event)"></google-pay-button>
+                        
+                    </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

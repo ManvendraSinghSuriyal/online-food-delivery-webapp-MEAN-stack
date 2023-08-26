@@ -1,0 +1,64 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add ng-bootstrap
+
+PATH: 
+  C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files\RedHat\java-11-openjdk-11.0.5-2\bin;C:\.Net & Java Software\apache-maven-3.6.3\bin;C:\.Net & Java Software\eclipse-jee-photon-R-win32-x86_64\eclipse\plugins\org.apache.ant_1.10.3.v20180417-1627\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Amazon\AWSCLIV2\;C:\ProgramData\chocolatey\bin;C:\Users\manvendrasuriyal\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\manvendrasuriyal\AppData\Local\Microsoft\WindowsApps;C:\Users\manvendrasuriyal\.dotnet\tools;C:\Users\manvendrasuriyal\AppData\Roaming\npm;C:\Users\manvendrasuriyal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\.Net & Java Software\Open JKD-11\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\bin;;C:\Users\manvendrasuriyal\AppData\Roaming\nvm;C:\Program Files\nodejs;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, copyfile 'C:\Users\manvendrasuriyal\AppData\Local\Yarn\Cache\v6\npm-@angular-core-16.1.8-e884016cd3355c44a28e0d0bcc3c716a031f005e-integrity\node_modules\@angular\core\fesm2022\core.mjs' -> 'D:\Projects\Angular Projects\OnlineFoodDelivery_WebApplication\Food-Delivery-WebApp\node_modules\@angular\core\fesm2022\core.mjs'
+
+npm manifest: 
+  {
+    "name": "food-delivery-web-app",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "watch": "ng build --watch --configuration development",
+      "test": "ng test"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "^16.1.0",
+      "@angular/common": "^16.1.0",
+      "@angular/compiler": "^16.1.0",
+      "@angular/core": "^16.1.0",
+      "@angular/forms": "^16.1.0",
+      "@angular/platform-browser": "^16.1.0",
+      "@angular/platform-browser-dynamic": "^16.1.0",
+      "@angular/router": "^16.1.0",
+      "angular-star-rating": "^6.0.0",
+      "rxjs": "~7.8.0",
+      "tslib": "^2.3.0",
+      "zone.js": "~0.13.0"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "^16.1.0",
+      "@angular/cli": "~16.1.0",
+      "@angular/compiler-cli": "^16.1.0",
+      "@types/jasmine": "~4.3.0",
+      "jasmine-core": "~4.6.0",
+      "karma": "~6.4.0",
+      "karma-chrome-launcher": "~3.2.0",
+      "karma-coverage": "~2.2.0",
+      "karma-jasmine": "~5.1.0",
+      "karma-jasmine-html-reporter": "~2.1.0",
+      "typescript": "~5.1.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

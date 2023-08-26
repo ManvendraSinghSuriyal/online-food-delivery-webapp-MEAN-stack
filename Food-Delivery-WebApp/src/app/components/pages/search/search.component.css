@@ -1,0 +1,10 @@
+div button{
+    border-radius: 0 10rem 10rem 0;
+    border: none;
+}
+
+input{
+
+    background-color: rgb(223, 221, 221);
+    font-weight: bold;
+}

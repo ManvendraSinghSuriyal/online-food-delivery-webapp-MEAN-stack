@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2 navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand logo" [routerLink]="['/']">
+        <img src="assets/images/delivery-man.png" alt="Bootstrap" width="42" height="45">
+        <span> My Food DeliveryApp </span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto ">
+            <li><a *ngIf="!isLoggedIn " class="nav-link" [routerLink]="['/login']">Login</a></li>
+          <li *ngIf="isLoggedIn " class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">{{user.name}}</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li><a class="dropdown-item" [routerLink]="['/profile']">Profile</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/order']">Order</a></li>
+              <li><a class="dropdown-item" (click)="logout()" >Logout</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/cart-page']"><i class="fa-solid fa-cart-shopping" style="color: #4473c5;"></i>
+              <span class="badge rounded-pill badge-notification bg-danger" *ngIf="totalQuantity">{{totalQuantity}}</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>

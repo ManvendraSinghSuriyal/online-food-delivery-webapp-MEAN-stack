@@ -1,0 +1,58 @@
+
+<!-- app.component.html -->
+
+<app-not-found
+  [show]="!cart || !cart.items.length"
+  notFoundMessage="Oops Cart Is Empty!, kindly add some foods in it"
+
+></app-not-found>
+
+<div *ngIf="cart && cart.items.length" class="container my-4">
+    <div class="row">
+        <h2 class="mb-3">Your Cart</h2>
+      <div class="col-md-8">
+       
+        <div class="cart-items ">
+          <div class="cart-item" *ngFor="let cartItem of cart.items">
+            <img src="{{ cartItem.food.imageUrl }}" alt="Food Item"  class="img-fluid cart-item-image p-2">
+            <div class="cart-item-details p-5 " style="justify-content: space-between;">
+              <div class="cart-item-title">{{ cartItem.food.name }}</div>
+             
+              <div class="cart-item-quantity">
+               
+                <select #select [value]="cartItem.quantity" (change)="changeQuantity(cartItem,select.value)">
+                    <option >1</option>
+                    <option >2</option>
+                    <option >3</option>
+                    <option >4</option>
+                </select>
+              
+              </div>
+              <div class="cart-item-price">Price: ${{ cartItem.food.price.toFixed(2) }}</div>
+           <div>
+              <button  title="remove" class="btn  rounded" (click)="removeFromCart(cartItem)"> <i class="fa-solid fa-xmark" 
+             style="color: black;"  >
+                
+                </i></button>
+                </div>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="checkout-summary">
+            <h3>Checkout Summary</h3>
+        <div class="checkout-total">
+          Total Price: {{ cart.totalPrice | currency:'INR' }}
+        </div>
+        <div class="checkout-item-count">
+          Total Items: {{ cart.totalCount }}
+        </div>
+        <button class="btn btn-outline-primary mt-3 d-inline-block" [routerLink]="['/checkout']" routerLinkActive="router-link-active" >Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

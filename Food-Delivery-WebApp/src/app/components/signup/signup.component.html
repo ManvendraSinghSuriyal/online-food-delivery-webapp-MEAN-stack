@@ -1,0 +1,86 @@
+
+
+                <form [formGroup]="regForm" (ngSubmit)="submitForm()">
+
+
+                  <div class="mb-3">
+                   
+                    <input  placeholder="username" name="name" formControlName="name"  type="text" class="form-control" 
+                    
+                    required   [ngClass]="{'invalid': regForm.get('name')?.invalid && (regForm.get('name')?.dirty || regForm.get('name')?.touched||isSubmitted)}">
+                 
+                    <span *ngIf="regForm.get('name')?.hasError('required') &&(regForm.get('name')?.dirty || regForm.get('name')?.touched||isSubmitted)" class="error">
+                      cannot be empty
+                    </span>
+                    <span *ngIf="regForm.get('name')?.hasError('minlength') &&(regForm.get('name')?.dirty || regForm.get('name')?.touched||isSubmitted)" class="error">
+                      length must be greater or equal to 5 characters
+                    </span>
+                    
+                  </div>
+
+
+
+                    <div class="mb-3">
+                   
+                      <input  placeholder="email address" name="email" formControlName="email" type="email" class="form-control" 
+                      [ngClass]="{'invalid': regForm.get('email')?.invalid && (regForm.get('email')?.dirty || regForm.get('email')?.touched||isSubmitted)}"     >
+                        <span *ngIf="regForm.get('email')?.hasError('required') &&(regForm.get('email')?.dirty || regForm.get('email')?.touched||isSubmitted)" class="error">
+                          cannot be empty
+                        </span>
+                        <span *ngIf="regForm.get('email')?.hasError('email') &&(regForm.get('email')?.dirty || regForm.get('email')?.touched||isSubmitted)" class="error">
+                          invalid email
+                        </span>
+                       
+                    </div>
+                    <div class="mb-3">
+                     
+                      <input  placeholder="password"  name="password" formControlName="password"  type="password" class="form-control"
+                      [ngClass]="{'invalid': regForm.get('name')?.invalid && (regForm.get('password')?.dirty || regForm.get('password')?.touched||isSubmitted)}" >
+                      <span *ngIf="regForm.get('password')?.hasError('required') &&(regForm.get('password')?.dirty || regForm.get('password')?.touched||isSubmitted)" class="error">
+                        cannot be empty
+                      </span>
+                      <span *ngIf="regForm.get('password')?.hasError('minlength') &&(regForm.get('password')?.dirty || regForm.get('password')?.touched||isSubmitted)" class="error">
+                       length must be greater or equal to 5 characters
+                      </span>
+                    </div>
+
+
+                    <div class="mb-3">
+                     
+                      <input  placeholder="confirm-password"  name="password" formControlName="confirmPassword"  type="password" class="form-control" 
+                      [ngClass]="{'invalid': regForm.get('confirmPassword')?.invalid && (regForm.get('confirmPassword')?.dirty || regForm.get('confirmPassword')?.touched||isSubmitted)}">
+                      <span *ngIf="regForm.get('confirmPassword')?.hasError('required') &&(regForm.get('confirmPassword')?.dirty || regForm.get('confirmPassword')?.touched||isSubmitted)" class="error">
+                        cannot be empty
+                      </span>
+                      <span *ngIf="regForm.get('confirmPassword')?.hasError('passwordMismatch') &&(regForm.get('confirmPassword')?.dirty || regForm.get('confirmPassword')?.touched||isSubmitted)" class="error">
+                        Password and Confirm Password do not match.
+                      </span>
+                    </div>
+
+                <div class="mb-3">
+                  
+      <textarea  placeholder="provide your address here.."  name="address" formControlName="address"   class="form-control"   [ngClass]="{'invalid': regForm.get('address')?.invalid && (regForm.get('address')?.dirty || regForm.get('address')?.touched||isSubmitted)}" ></textarea>
+             
+                  <span *ngIf="regForm.get('address')?.hasError('required') &&(regForm.get('address')?.dirty || regForm.get('address')?.touched||isSubmitted)" class="error">
+                    cannot be empty
+                  </span>  
+                  <span *ngIf="regForm.get('address')?.hasError('minlength') &&(regForm.get('address')?.dirty || regForm.get('address')?.touched||isSubmitted)" class="error">
+                    length must be greater or equal to 10 characters
+                  </span> 
+                </div>
+
+
+                  <div class="text-center py-2">
+                    <button type="submit" class="btn btn-lg  btn-success" data-bs-dismiss="modal"  [disabled]="regForm.status==='INVALID'" >Signup</button>
+               
+                  </div> 
+                </form>
+             
+   
+
+           
+      
+            
+
+ 
+

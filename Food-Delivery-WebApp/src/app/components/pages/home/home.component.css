@@ -1,0 +1,26 @@
+.dish-card {
+    /* max-width: 500px; */
+    margin: 4px;
+    padding: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  .dish-card:hover {
+    transform: scale(1.2);
+  }
+
+ 
+
+  .favorite{
+    color: #e2284d;
+  }
+
+  .favorite.not{
+    color: rgb(207, 206, 206);
+}
+
+.icon{
+    float: right;
+}
+
+

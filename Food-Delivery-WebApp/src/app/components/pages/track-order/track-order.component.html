@@ -1,0 +1,71 @@
+
+
+<div class="container" *ngIf="order">
+    <div class="row py-3">
+      <div class="col-md-6 me-4">
+
+        <div class="card bg-dark text-white">
+            <div class="card-body">
+              <h4 class="card-title pb-2">Order Summary</h4>
+              <p><strong>Order ID:</strong> {{ order.id }}</p>
+              <p><strong>Order Date:</strong> {{ order.createdAt | date: 'medium' }}</p>
+              <p><strong>Name:</strong> {{ order.name }}</p>
+              <p><strong>Address:</strong> {{ order.address }}</p>
+              <p><strong>Status:</strong> {{ order.status }}</p>
+            </div>
+          </div>
+          <div class="card py-2">
+            <div class="card-body bg-dark text-white">
+              <h4 class="card-title">Order Items</h4>
+              <table class="table table-borderless table-dark">
+                <tbody>
+                  <tr *ngFor="let item of order.items">
+                    <td>
+                        <a [routerLink]="['/food',item.food.id]">
+                      <img [src]="item.food.imageUrl" alt="{{ item.food.name }}" style="max-width: 60px;">
+                    </a>
+                    </td>
+                    <td>
+                      <p><strong>{{ item.food.name }}</strong></p>
+                      
+                    </td>
+                    <td>
+                        <p>Price: {{ item.food.price | currency: 'INR' }}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr>
+              <h4 class="card-text ">Total Price: {{ order.totalPrice | currency:'INR'}}</h4>
+            </div>
+          </div>
+
+
+
+      </div>
+
+
+      <div class="col-md-5 py-3">
+     
+        <h2 class="text-center">Live Order status</h2>
+        
+     
+       <!-- order-status.component.html -->
+       <div class="order-status bg-dark text-white py-2">
+        <div
+          class="status-icon"
+          [ngClass]="getStatusIconClass(currentStatus)"
+          [@statusChange]="currentState"
+        ></div>
+        <p class="status-text">Order Status: <span>{{ currentStatus }}</span></p>
+      </div>
+      
+
+  
+    
+    </div>
+   
+
+    </div>
+  </div>
+  

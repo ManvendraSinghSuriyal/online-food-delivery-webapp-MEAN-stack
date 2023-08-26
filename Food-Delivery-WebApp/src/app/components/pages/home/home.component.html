@@ -1,0 +1,47 @@
+<div class="container text-center py-5">
+
+    <!-- <div class="row">
+<div class="col-md-4 offset-4 "> -->
+<app-search></app-search>
+<!-- </div>
+
+    </div> -->
+    <div class="row pt-3">
+        <div class="col-md-12 m-2 ">
+            <app-tag></app-tag>
+        </div>
+        
+            </div>
+
+   
+    <div class="row">
+
+        
+        <div class="col-md-3 d-flex py-3" *ngFor="let food of foods">
+            <div class="card dish-card" >
+              <a [routerLink]="['/food',food.id]" class="text-decoration-none" style="color: black;">
+                <img src="{{food.imageUrl}}" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                <div style="display: flex;
+                justify-content: space-between;">  
+               <h5>{{food.name}}</h5>
+               <span  class="icon"><i class="fa-solid fa-heart favorite {{food.favorite?'':'not'}}"></i></span>
+              </div>
+                  <span style="float: left;">  <star-rating [starType]="'svg'" [rating]="food.stars" [readOnly]="true"></star-rating></span>
+                  <br clear="all" />
+                  <span class="text-secondary m-1" style="display: inline-block;" *ngFor="let origin of food.origins"  >
+                    {{origin}}
+                  </span>
+                <div class="py-2">
+                  <span class="text-secondary">{{food.price | currency:'INR'}}</span> <span style="float: right;"> {{food.cookTime}} min </span>
+                </div>             
+                <!-- </a> -->
+              </div>
+              </a>
+                </div>
+               
+
+        </div>
+    </div>
+</div>
