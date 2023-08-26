@@ -22,7 +22,7 @@ Run Node.js server: `npm start`, listening on port 5000.
 Uses MongoDB.
 
 ## Features
-User auth, order tracking, history, admin panel for menu and orders.
+User auth, order tracking, Live Map Location, Responsive UI, Upi transactions support 
 
 ## Technologies
 Frontend: Angular, Backend: Node.js, Express.js, Database: MongoDB.
